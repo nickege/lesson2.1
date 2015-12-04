@@ -10,7 +10,7 @@
 		<h1><?php echo $article['title']; ?></h1>
 		<div style="font-style: italic;"><?php echo $article['body']; ?></div>
 	</div> <br /><br />
-	<a href="/lesson2.1/controller/news.php">На главную</a>
+	<a href="/lesson2.1/controller/posts.php">На главную</a>
 	</div>
 </body>
 </html>

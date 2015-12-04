@@ -6,18 +6,18 @@
 </head>
 <body>
 <div>
-		<?php foreach ($news as $new) : ?>
+		<?php foreach ($posts as $post) : ?>
 			<div style="border-bottom: 1px solid black; margin-bottom: 10px; padding-bottom: 10px;">
-				<a href="/lesson2.1/controller/article.php?id=<?php echo $new['id']; ?>">
-					<?php echo $new['title']; ?>
+				<a href="/lesson2.1/controller/article.php?id=<?php echo $post['id']; ?>">
+					<?php echo $post['title']; ?>
 				</a>
 				<div style="font-style: italic;">
-					<?php echo $new['body']; ?>
+					<?php echo $post['body']; ?>
 				</div>
 			</div>
 		<?php endforeach; ?>
 		
-		<form action="/lesson2.1/controller/news.php" method="post">
+		<form action="/lesson2.1/controller/posts.php" method="post">
 			<label>Название <input type="text" name="title" value="" /></label> <br />
 			<label>Текст <textarea rows="3" cols="30" name="body"></textarea></label> <br />
 			<input type="submit" value="Добавить" />

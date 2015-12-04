@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../model/news.php';
+require __DIR__ . '/../model/posts.php';
 
 if (!empty($_POST)) {
 
@@ -10,13 +10,13 @@ if (!empty($_POST)) {
 		$data['title'] = $_POST['title'];
 		$data['body'] = $_POST['body'];
 
-		if (News_insert ($data)) {
-			header ('Location: /lesson2.1/controller/news.php');
+		if (posts_insert ($data)) {
+			header ('Location: /lesson2.1/controller/posts.php');
 		};
 	}
 
 }
 
-$news = News_getAll ();
-include __DIR__ . '/../view/news.php';
+$posts = posts_getAll ();
+include __DIR__ . '/../view/posts.php';
 

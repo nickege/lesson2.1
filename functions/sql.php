@@ -11,7 +11,6 @@ function sqlQuery ($sql)
 	sqlConnect ();
 	$result = mysql_query($sql);
 	$data = array ();
-	
 	while (false !== $row = mysql_fetch_assoc($result)) {
 		$data[] = $row;
 	}
@@ -22,9 +21,5 @@ function sqlQuery ($sql)
 function sqlExec($sql)
 {
 	sqlConnect ();
-	
-// 	echo '<pre>';
-// 	print_r ($sql);
-// 	die ();
 	return mysql_query($sql);
 }
