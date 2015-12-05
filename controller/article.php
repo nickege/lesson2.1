@@ -1,15 +1,21 @@
 <?php
 
-require __DIR__ . '/../model/posts.php';
+require __DIR__ . '/../model/News.php';
+
+$news = new News();
 
 if (!empty($_GET['id'])) {
 	$id = (int) $_GET['id'];
-	$article = posts_getArticle ($id);
+	$article = $news->getArticle ($id);
 	$article = $article[0];
-
-	include __DIR__ . '/../view/article.php';
+	
+	if ($article) {
+		include __DIR__ . '/../view/article.php';
+	} else {
+		header ('Location: /lesson2.1/controller/news.php');
+	}
 } else {
-	header ('Location: /lesson2.1/controller/posts.php');
+	header ('Location: /lesson2.1/controller/news.php');
 }
 
 
