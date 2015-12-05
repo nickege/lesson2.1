@@ -2,12 +2,9 @@
 
 require __DIR__ . '/../model/News.php';
 
-$news = new News();
-
 if (!empty($_GET['id'])) {
 	$id = (int) $_GET['id'];
-	$article = $news->getArticle ($id);
-	$article = $article[0];
+	$article = News::getArticle ($id);
 	
 	if ($article) {
 		include __DIR__ . '/../view/article.php';

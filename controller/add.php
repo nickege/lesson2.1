@@ -9,11 +9,9 @@ if (!empty($_POST)) {
 	if (!empty($_POST['title']) && !empty($_POST['body'])) {
 		$data['title'] = $_POST['title'];
 		$data['body'] = $_POST['body'];
-
-		$news->addArticle ($data);
-
+		
+		News::addArticle ($data);
 	}
-
 }
 
 header ('Location: /lesson2.1/controller/news.php');

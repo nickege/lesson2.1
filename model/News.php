@@ -3,31 +3,37 @@
 require_once __DIR__ . '/../classes/DB.php';
 require __DIR__ . '/../classes/Posts.php';
 
-$db = new DB();
+
 
 class News extends Posts
 {
 
-	public $table = 'news';
+	public $id;
+	public $title;
+	public $body;
 
-	public function getAll ()
+	public static function getAll()
 	{
-		return DB::select ($this->table);
+		$db = new DB();
+		return $db->select('news', 'News');
 	}
 
-	public function addArticle ($data)
+	public static function getArticle($id)
 	{
-		return DB::insert ($this->table, $data );
+		$db = new DB();
+		return $db->select_one('news', $id, 'News');
 	}
 
-	public function getArticle ($id)
+	public static function updateArticle($id, $data)
 	{
-		return DB::select ($this->table, $id);
+		$db = new DB();
+		return $db->update('news', $id, $data);
 	}
 
-	public function updateArticle ($id, $data)
+	public static function addArticle($data)
 	{
-		return DB::update ($this->table, $id, $data);
+		$db = new DB();
+		return $db->insert('news', $data );
 	}
 
 }

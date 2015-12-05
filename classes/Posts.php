@@ -2,13 +2,13 @@
 
 abstract class Posts
 {
-	public $table;
 	
-	abstract public function getAll ();
-
-	abstract public function addArticle ($data);
-
-	abstract public function getArticle ($id);
+	abstract public static function getAll();
 	
-	abstract public function updateArticle ($id, $data);
+	abstract public static function getArticle($id);
+	
+	abstract public static function updateArticle($id, $data);
+
+	abstract public static function addArticle($data);
+
 }
